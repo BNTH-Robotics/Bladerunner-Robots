@@ -11,39 +11,37 @@ task main(){
 	while(true){
 
 			motor[port7] = vexRT[Ch2];
-			motor[port6] = vexRT[Ch3];
+			motor[port6] = vexRT[Ch3] / 2;
 
-			if(vexRT[Btn5U]){
-				motor[port3] = -127;
-			} else if (vexRT[Btn5D]) {
-				motor[port3] = 127;
-			} else {
-				motor[port3] = 0;
-			}
-
-			if(vexRT[Btn6U]){
+			if(vexRT[Btn5D]){
 				motor[port4] = -127;
-			} else if (vexRT[Btn6D]) {
+			} else if (vexRT[Btn5U]) {
 				motor[port4] = 127;
+			} else if(vexRT[Btn7U]){
+				motor[port4] = -50;
+			} else if (vexRT[Btn7D]) {
+				motor[port4] = 50;
 			} else {
 				motor[port4] = 0;
 			}
 
-
-			if(vexRT[Btn8U]){
-				motor[port3] = -64;
+			if(vexRT[Btn6D]){
+				motor[port3] = -127;
+			} else if (vexRT[Btn6U]) {
+				motor[port3] = 127;
+			} else if(vexRT[Btn8U]){
+				motor[port3] = -50;
 			} else if (vexRT[Btn8D]) {
-				motor[port3]= 64;
+				motor[port3] = 50;
 			} else {
 				motor[port3] = 0;
 			}
 
-			if(vexRT[Btn7L]){
-				motor[port8] = -60;
-			} else if (vexRT[Btn8R]){
-				motor[port8] = 60;
+			if(vexRT[Btn8R]){
+				motor[port8] = 127;
 			}
-
-
+			if(vexRT[Btn7L]){
+				motor[port8] = -127;
+ 		}
 	}
 }
